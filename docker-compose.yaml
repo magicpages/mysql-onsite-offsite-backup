@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backup:
+    build: .
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASS: ${MYSQL_PASS}
+      MYSQL_HOST: ${MYSQL_HOST}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+      S3_BUCKET_NAME: ${S3_BUCKET_NAME}
+      S3_HOST_BASE: ${S3_HOST_BASE}
+      S3_HOST_BUCKET: ${S3_HOST_BUCKET}
+      S3_BUCKET_LOCATION: ${S3_BUCKET_LOCATION}
+      DAILY_RETENTION: ${DAILY_RETENTION}
+      WEEKLY_RETENTION: ${WEEKLY_RETENTION}
+      MONTHLY_RETENTION: ${MONTHLY_RETENTION}
+      YEARLY_RETENTION: ${YEARLY_RETENTION}
+    volumes:
+      - ./backup:/backup
+    restart: unless-stopped
