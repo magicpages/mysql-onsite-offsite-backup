@@ -25,7 +25,7 @@ This tool was developed for the specific use case at [Magic Pages](https://magic
 
 1. **Clone the Repository:**
 
-   ```sh
+  ```sh
   git clone https://github.com/magicpages/mysql-onsite-offsite-backup.git
   cd mysql-onsite-offsite-backup
   ```
